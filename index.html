@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario Motos</title>
+  <link rel="stylesheet" href="./_CSS/formulario_Motos.css" />
+</head>
+<body>
+  <h1>🏍️ Registro de Fanáticos de Motos</h1>
+  <form id="miFormulario">
+    <div class="form-group">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" name="edad" min="12" max="100" required />
+    </div>
+
+    <div class="form-group">
+      <label for="fecha">¿Cuándo compraste tu moto?</label>
+      <input type="date" id="fecha" name="fecha" />
+    </div>
+
+    <div class="form-group">
+      <label for="semana">Semana favorita para rodar:</label>
+      <input type="week" id="semana" name="semana" />
+    </div>
+
+    <div class="form-group">
+      <label for="mes">Mes de tu última rodada:</label>
+      <input type="month" id="mes" name="mes" />
+    </div>
+
+    <div class="form-group">
+      <label for="hora">Hora en que sueles salir:</label>
+      <input type="time" id="hora" name="hora" />
+    </div>
+
+    <div class="form-group">
+      <label for="viaje">Próximo viaje:</label>
+      <input type="datetime-local" id="viaje" name="viaje" />
+    </div>
+
+    <div class="form-group">
+      <label for="color">Color de tu moto:</label>
+      <input type="color" id="color" name="color" />
+    </div>
+
+    <div class="form-group">
+      <label for="tipo">Tipo de moto:</label>
+      <select id="tipo" name="tipo">
+        <option value="urbana">Urbana</option>
+        <option value="deportiva">Deportiva</option>
+        <option value="crucero">Crucero</option>
+        <option value="enduro">Enduro</option>
+        <option value="otra">Otra</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="foto">Foto de tu moto:</label>
+      <input type="file" id="foto" name="foto" />
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" />
+    </div>
+
+    <div class="form-group">
+      <label for="web">Sitio web o canal:</label>
+      <input type="url" id="web" name="web" />
+    </div>
+
+    <div class="form-group">
+      <label for="busqueda">¿Qué accesorio buscas?</label>
+      <input type="search" id="busqueda" name="busqueda" />
+    </div>
+
+    <div class="form-group">
+      <label for="potencia">Potencia en HP:</label>
+      <input type="range" id="potencia" name="potencia" min="10" max="200" />
+    </div>
+
+    <div class="form-group">
+      <label>¿Recomiendas tu moto?</label><br />
+      <input type="radio" id="si" name="recomienda" value="sí" />
+      <label for="si">Sí</label>
+      <input type="radio" id="no" name="recomienda" value="no" />
+      <label for="no">No</label>
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" id="viajes" name="viajes" />
+      <label for="viajes">Me gustan los viajes largos</label>
+    </div>
+
+    <div class="form-group">
+      <label for="comentarios">Comentarios:</label>
+      <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+    </div>
+
+    <input type="hidden" name="formulario" value="registro_motero" />
+
+    <div class="form-group">
+      <label>Botón decorativo:</label><br />
+      <input type="image" src="https://cdn-icons-png.flaticon.com/512/3448/3448609.png" alt="Decorativo" width="48" />
+    </div>
+
+    <button type="submit">Enviar</button>
+    <input type="reset" value="Reiniciar" />
+    <input type="button" value="Mostrar Info" onclick="alert('Formulario de motos')" />
+  </form>
+
+  <div id="resultado"></div>
+
+  <script>
+    document.getElementById("miFormulario").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const datos = {
+        Nombre: form.nombre.value,
+        Email: form.email.value,
+        Edad: form.edad.value,
+        Fecha: form.fecha.value,
+        Semana: form.semana.value,
+        Mes: form.mes.value,
+        Hora: form.hora.value,
+        Viaje: form.viaje.value,
+        Color: form.color.value,
+        Tipo: form.tipo.value,
+        Teléfono: form.telefono.value,
+        Web: form.web.value,
+        Búsqueda: form.busqueda.value,
+        Potencia: form.potencia.value,
+        Recomienda: form.recomienda.value,
+        Viajes: form.viajes.checked ? "Sí" : "No",
+        Comentarios: form.comentarios.value,
+      };
+
+      let html = "<h2>Datos enviados:</h2><ul>";
+      for (let campo in datos) {
+        html += `<li><strong>${campo}:</strong> ${datos[campo]}</li>`;
+      }
+      html += "</ul>";
+      document.getElementById("resultado").innerHTML = html;
+    });
+  </script>
+</body>
+</html>

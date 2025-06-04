@@ -1,0 +1,74 @@
+/* Estilo general */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  margin: 20px;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #ff5500;
+}
+
+/* Estilo para el formulario */
+form {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de grupos */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Etiquetas y campos */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Botones especiales */
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  background-color: #ff5500;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  background-color: #e64400;
+}
+
+/* Resultado */
+#resultado {
+  max-width: 700px;
+  margin: 20px auto;
+  background-color: #fff7e6;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ffe0b3;
+}
